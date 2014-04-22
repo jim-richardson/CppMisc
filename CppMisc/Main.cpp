@@ -1,6 +1,8 @@
 #include <iostream>
+#include <complex>
 
 #include "Overload.h"
+#include "GenDemo.h"
 
 int main()
 {
@@ -15,12 +17,12 @@ int main()
 	Overload::swap(x, y);
 	std::cout << "x=" << x << ", y=" << y << std::endl;
 
-	std::cout << "What about complex numbers?" << std::endl;
+	std::cout << "Now complex numbers:" << std::endl;
 
-	double k = 5.3, p = 1.1;
-	std::cout << "k=" << k << ", p=" << p << std::endl;
-	Overload::swap(k, p);
-	std::cout << "k=" << k << ", p=" << p << std::endl;
+	std::complex <double> c1(4.0, 5.0), c2(3.4, 6.7);
+	std::cout << "c1=" << c1 << ", c2=" << c2 << std::endl;
+	GenDemo::swap(c1, c2);
+	std::cout << "c1=" << c1 << ", c2=" << c2 << std::endl;
 
 
 	system("pause");

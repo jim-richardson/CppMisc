@@ -4,8 +4,7 @@
 class GenDemo {
 public:
 	template <class T>
-	inline void swap(T& d, T& s)
-	{
+	static inline void swap(T& d, T& s) {
 		T temp = d;
 		d = s;
 		s = temp;
