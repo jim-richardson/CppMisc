@@ -17,6 +17,12 @@ int main()
 
 	std::cout << "What about complex numbers?" << std::endl;
 
+	double k = 5.3, p = 1.1;
+	std::cout << "k=" << k << ", p=" << p << std::endl;
+	Overload::swap(k, p);
+	std::cout << "k=" << k << ", p=" << p << std::endl;
+
+
 	system("pause");
     return 0;
 }
