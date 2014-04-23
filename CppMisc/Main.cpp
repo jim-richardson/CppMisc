@@ -7,8 +7,6 @@
 int main()
 {
 	std::cout << "Swapping:" << std::endl;
-
-	std::cout << "test branch version uses i = 44, j = -8." << std::endl;
 	int i = 44, j = -8;
     std::cout << "i=" << i << ", j=" << j << std::endl;
 	Overload::swap(i, j);
