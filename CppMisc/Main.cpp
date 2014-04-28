@@ -48,26 +48,32 @@ static void genericFunctionsDemo() {
 	GenDemo::show(iArray, 3);
 }
 
-static void enumDemo() {
-	std::cout << "enum days:" << std::endl;
-	DayOfWeek d0, d1(MON);
-	d0.print();
-	d1.print();
-}
-
 static void pointDemo() {
 	std::cout << "Origin:" << std::endl;
-	Point orig;
+	Point orig, p11(1,1);
 	std::cout << "orig.x=" << orig.GetX() << ", orig.y=" << orig.GetY() << std::endl;
 	std::cout << orig << std::endl;
+	std::cout << p11 << std::endl;
+}
+
+static void enumDemo() {
+	std::cout << "testing DayOfWeek:" << std::endl;
+	DayOfWeek d0, d1(WED);
+	std::cout << "d0 = " << d0 << std::endl;
+	std::cout << "d1 = " << d1 << std::endl;
+	std::cout << "now let d0 count up from Thursday until it is equal to d1:" << std::endl;
+	d0.setDay(THU);
+	while (d0 != d1) {
+		std::cout << "d0 = " << ++d0 << std::endl;
+	}
 }
 
 int main()
 {
 	//swapDemo();
 	//genericFunctionsDemo();
-	//enumDemo();
-	pointDemo();
+	//pointDemo();
+	enumDemo();
 
 	system("pause");
     return 0;

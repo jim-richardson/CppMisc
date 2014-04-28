@@ -1,5 +1,3 @@
-//#pragma once
-
 #ifndef ENUMDEMO_H
 #define ENUMDEMO_H
 
@@ -8,21 +6,24 @@
 //typedef 
 enum day{SUN, MON, TUE, WED, THU, FRI, SAT};
 
+// pre-increment for day:
 inline static day operator++ (day d) { 
 	return  static_cast<day>((static_cast<int>(d) + 1) % 7); 
 } 
-//static int getInt(day d);
 
 class DayOfWeek {
-	//friend std::ostream &operator<<(std::ostream&, const DayOfWeek&);
+	//friend std::ostream &operator<<(std::ostream& out, const DayOfWeek& dow) { return dow.toStream(out); }
+	friend std::ostream &operator<<(std::ostream& out, DayOfWeek& dow) { return dow.toStream(out); }
 public:
 	DayOfWeek(day = SUN); // use name of enum rather than the member thisDay
 	DayOfWeek(int): thisDay(SUN){}
 	virtual ~DayOfWeek();
 	const DayOfWeek &operator=(const DayOfWeek&); //assignment operator
+	void setDay(day d) { thisDay = d; }
 	bool operator==(const DayOfWeek&) const;
 	bool operator!=(const DayOfWeek& right) const {return  !(*this == right);}
-	virtual void print() const;
+	DayOfWeek &operator++() { thisDay = ++thisDay; return *this; } // pre-increment
+	std::ostream& toStream(std::ostream &out);
 protected:
 	day thisDay;
 };
