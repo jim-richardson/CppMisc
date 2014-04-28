@@ -61,6 +61,7 @@ static void enumDemo() {
 	DayOfWeek d0, d1(WED);
 	std::cout << "d0 = " << d0 << std::endl;
 	std::cout << "d1 = " << d1 << std::endl;
+	std::cout << "Days from " << d0 << " unitl " << d1 << " = " << d0.daysUntil(d1) << std::endl;
 	std::cout << "now let d0 count up from Thursday until it is equal to d1:" << std::endl;
 	d0.setDay(THU);
 	while (d0 != d1) {

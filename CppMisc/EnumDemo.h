@@ -20,6 +20,7 @@ public:
 	virtual ~DayOfWeek();
 	const DayOfWeek &operator=(const DayOfWeek&); //assignment operator
 	void setDay(day d) { thisDay = d; }
+	int daysUntil(day d) { return (static_cast<int>(d) - static_cast<int>(thisDay) + 7) % 7; }
 	bool operator==(const DayOfWeek&) const;
 	bool operator!=(const DayOfWeek& right) const {return  !(*this == right);}
 	DayOfWeek &operator++() { thisDay = ++thisDay; return *this; } // pre-increment
